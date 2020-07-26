@@ -16,23 +16,23 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-console.log(paths.paths.Pusher_AppId)
-//1045127
 
 // Pusher configuration
+// all values are given when you sign up on pusher
 const pusher = new Pusher({
-  appId: paths.paths.Pusher_AppId,
-  key: paths.paths.Pusher_Key,
-  secret: paths.paths.Pusher_Secret,
+  appId: paths.paths.Pusher_AppId, //pusher app_ID
+  key: paths.paths.Pusher_Key,   //pusher_key
+  secret: paths.paths.Pusher_Secret, // pusher_secret key
   encrypted: true,
-  cluster: paths.paths.Pusher_Cluster
+  cluster: paths.paths.Pusher_Cluster //pusher cluster name
 });
 
 // Cloudinary configuration
+//All Values are given when you sign up on cloudinary
 cloudinary.config({
-    cloud_name: paths.paths.CL_Cloud_Name,
-    api_key: paths.paths.Cl_Key,
-    api_secret: paths.paths.Cl_Secret
+    cloud_name: paths.paths.CL_Cloud_Name, //cloudinary cloud name
+    api_key: paths.paths.Cl_Key,  //cloudinary cloud key
+    api_secret: paths.paths.Cl_Secret // cloudinary secret
 });
 
 app.get('/', (req, res) => {
